@@ -1,0 +1,77 @@
+@import "../scss/mixins";
+@import "../scss/variables";
+
+.edit-profile {
+  width: 450px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: $white;
+  header {
+    @include flex(row, space-between, center);
+    padding: 0 1em;
+    border-bottom: 1px solid $border;
+    button {
+      border: none;
+      background-color: transparent;
+      color: $clickable;
+      cursor: pointer;
+    }
+    button:nth-child(3) {
+      color: $light-blue;
+    }
+  }
+  .body {
+    @include flex(row, initial, flex-start);
+    gap: 1.5em;
+    padding: 1em 2em;
+    .avatar {
+      width: 100px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.5s;
+      input {
+        display: none;
+      }
+      label {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-shadow: 0px 0px 2px black;
+        font-size: 14px;
+        width: 100%;
+        height: 100%;
+        transition: 0.15s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    form {
+      flex-grow: 1;
+      & > div {
+        margin: 0.75em 0;
+      }
+      input {
+        @include input;
+        width: 100%;
+      }
+      textarea {
+        @include input;
+        width: 100%;
+        height: 100px;
+      }
+    }
+  }
+}

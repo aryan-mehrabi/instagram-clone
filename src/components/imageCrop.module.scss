@@ -1,0 +1,9 @@
+@import "../scss/NewPostContent";
+@import "../scss/mixins";
+
+.header {
+  @include flexSpaceBetween;
+  p, svg {
+    cursor: pointer;
+  }
+}

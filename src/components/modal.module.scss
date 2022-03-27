@@ -1,0 +1,21 @@
+@import "../scss/mixins";
+
+.modal {
+  @include flexCenter(row);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  .close-button {
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+  }
+}

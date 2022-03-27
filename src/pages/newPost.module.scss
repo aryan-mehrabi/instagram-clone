@@ -1,0 +1,12 @@
+@import "../scss/mixins";
+
+.content {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
+  img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,55 @@
+@import "../scss/mixins";
+@import "../scss/variables";
+
+.main {
+  @include pageContainer;
+  padding-top: 6em;
+  .information {
+    @include flex;
+    gap: 5em;
+    margin-left: 2em;
+    font-size: 18px;
+    .avatar {
+      width: 150px;
+      img {
+        border-radius: 50%;
+        width: 100%;
+        display: block;
+      }
+    }
+    .detail {
+      header {
+        @include flex(row, initial, center);
+        gap: 1.5em;
+        .follow-button {
+          @include buttonPrimary;
+          font-size: 13px;
+        }
+        .edit-button {
+          @extend .follow-button;
+          @include border;
+          background-color: transparent;
+          color: $clickable;
+          font-weight: bold;
+        }
+      }
+      .stats {
+        @include flex;
+        gap: 1.5em;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .posts-container {
+    img {
+      width: 100%;
+      display: block;
+    }
+    padding: 2em 0;
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

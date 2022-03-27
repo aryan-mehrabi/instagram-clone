@@ -1,0 +1,54 @@
+@import "./variables"
+;
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex($direction: initial, $justify: initial, $align: initial) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin pageContainer {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@mixin border {
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+}
+
+@mixin link {
+  color: $light-blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@mixin buttonPrimary {
+  background-color: $light-blue;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 0.55em 2.5em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin input {
+  height: 30px;
+  background-color: $light-white;
+  @include border;
+}

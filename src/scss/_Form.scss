@@ -1,0 +1,44 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.login {
+  width: 350px;
+  border-radius: 5px;
+  margin-bottom: 3em;
+
+  form {
+    background-color: $white;
+    padding: 2em 2em;
+    margin: 1em 0;
+    @include border;
+
+    h1 {
+      text-align: center;
+    }
+    div {
+      margin: 1em 0;
+      text-transform: capitalize;
+    }
+    input {
+      @include input;
+      width: 100%;
+    }
+    button {
+      @include buttonPrimary;
+      width: 100%;
+    }
+  }
+
+  .signup {
+    @include flexCenter(row);
+    @include border;
+    background-color: $white;
+
+    p {
+      margin-right: 0.5em;
+    }
+    a {
+      @include link;
+    }
+  }
+}

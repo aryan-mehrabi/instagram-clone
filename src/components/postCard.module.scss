@@ -1,0 +1,106 @@
+@import "../scss/mixins";
+@import "../scss/variables";
+@import "../scss/NewPostContent";
+
+.delete-dialog {
+  background-color: white;
+  width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  .body {
+    .delete-post {
+      background-color: transparent;
+      width: 100%;
+      border: none;
+      color: red;
+      display: block;
+      cursor: pointer;
+      padding: 1.25em 0;
+    }
+    & > div {
+      padding: 1em;
+      @include flex(row, flex-end);
+      .cancel {
+        cursor: pointer;
+        border: none;
+        padding: 0.65em 1.5em;
+        border-radius: 3px;
+      }
+      .delete {
+        @extend .cancel;
+        background-color: rgb(228, 0, 0);
+        color: white;
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
+
+.card {
+  @include border;
+  background-color: $white;
+  margin-bottom: 2em;
+  &__header {
+    @include flex(initial, initial, center);
+    border-bottom: 1px solid $border;
+    padding: 1em;
+    img {
+      width: 37px;
+      margin-right: 10px;
+    }
+    a {
+      @include flex(row, initial, center);
+      text-decoration: none;
+      color: $clickable;
+      font-size: 18px;
+    }
+    svg {
+      margin-left: auto;
+      font-size: 18px;
+    }
+  }
+  .post {
+    display: block;
+    width: 100%;
+  }
+  &__footer {
+    border-top: 1px solid $border;
+    padding: 1rem;
+    .like {
+      font-size: 25px;
+      svg {
+        margin-right: 17px;
+      }
+    }
+    .details {
+      a {
+        color: $clickable;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .comment {
+        p {
+          margin: 7px 0;
+        }
+      }
+    }
+    .post-comment {
+      @include flex(row, center, center);
+      border-top: 1px solid $border;
+      padding-top: 10px;
+      input {
+        padding: 10px 0;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        flex-grow: 1;
+      }
+      button {
+        @include link;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}

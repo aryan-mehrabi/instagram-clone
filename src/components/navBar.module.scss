@@ -1,0 +1,31 @@
+@import "../scss/mixins";
+@import "../scss/variables";
+
+nav {
+  border-bottom: 1px solid $border;
+  background-color: $white;
+  width: 100%;
+  position: fixed;
+  .nav-container {
+    @include flexSpaceBetween;
+    @include pageContainer;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .menu {
+      @include flex(row, initial, center);
+      gap: 20px;
+      & > * {
+        cursor: pointer;
+      }
+      svg {
+        font-size: 25px;
+      }
+      img {
+        width: 30px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

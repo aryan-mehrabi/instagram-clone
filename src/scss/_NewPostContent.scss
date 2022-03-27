@@ -1,0 +1,10 @@
+@import "../scss/mixins";
+
+.header {
+  @include border;
+  padding: 0 1em;
+  text-align: center;
+}
+.body {
+  height: calc(100% - 60px);
+}

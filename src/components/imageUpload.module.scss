@@ -1,0 +1,12 @@
+@import "../scss/NewPostContent";
+
+.drop {
+  color: #262626;
+  @include flexCenter(row);
+  padding-bottom: 3em;
+  width: 100%;
+  height: 100%;
+  p {
+    font-size: 1.5em;
+  }
+}
