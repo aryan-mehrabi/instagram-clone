@@ -45,8 +45,7 @@ export const signUp = (email, password, username) => async () => {
     await setData(response.user.uid, "users", {
       userId: response.user.uid,
       username,
-      profilePicture:
-        "https://firebasestorage.googleapis.com/v0/b/instagram-clone-3085a.appspot.com/o/profile-pictures%2Fuser.jpg?alt=media&token=3ec68d2d-89e2-4a54-852b-0f6766e79ad5",
+      profilePicture: process.env.DEFAULT_PROFILE_PICTURE_URL,
       followers: 0,
     });
   } catch (error) {
