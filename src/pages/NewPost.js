@@ -7,7 +7,7 @@ import ImageDescription from "../components/ImageDescription";
 import { WizardContext } from "../context/WizardContext";
 import { createPost } from "../actions";
 
-const NewPost = ({ setIsModalOpen, userId, createPost, user }) => {
+const NewPost = ({userId, createPost, user }) => {
   const [step, setStep] = useState(0);
   const [file, setFile] = useState(null);
   const [description, setDescription] = useState("");

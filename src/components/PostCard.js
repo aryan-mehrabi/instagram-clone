@@ -43,7 +43,10 @@ const PostCard = ({ post, userId, deletePost }) => {
           >
             Cancel
           </button>
-          <button onClick={() => deletePost(userId, post.postId)} className={styles["delete"]}>
+          <button
+            onClick={() => deletePost(userId, post.postId)}
+            className={styles["delete"]}
+          >
             DELETE
           </button>
         </div>
@@ -83,17 +86,17 @@ const PostCard = ({ post, userId, deletePost }) => {
               <Link to={`/${post.userId}`}>{post.username} </Link>
               {post.description}
             </p>
-            <div className={styles["comment"]}>
+            {/* <div className={styles["comment"]}>
               <p>
-                <Link to="">user </Link> ridi haji
+                <Link to="">user </Link> yo
               </p>
               <p>
-                <span>user</span>ridi haji
+                <span>user</span>yo
               </p>
               <p>
-                <span>user</span>ridi haji
+                <span>user</span>yo
               </p>
-            </div>
+            </div> */}
             <p>{calculateTimeAgo(post.createdTime)}</p>
           </div>
           <div className={styles["post-comment"]}>

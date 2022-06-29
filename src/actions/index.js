@@ -9,7 +9,13 @@ import {
   getDownloadURL,
   uploadBytes,
 } from "firebase/storage";
-import { auth, writeNewPost, setData, getData, updateData } from "../api/Firebase";
+import {
+  auth,
+  writeNewPost,
+  setData,
+  getData,
+  updateData,
+} from "../api/Firebase";
 
 export const authChanged = userId => {
   if (userId) {
@@ -45,7 +51,7 @@ export const signUp = (email, password, username) => async () => {
     await setData(response.user.uid, "users", {
       userId: response.user.uid,
       username,
-      profilePicture: process.env.DEFAULT_PROFILE_PICTURE_URL,
+      profilePicture: process.env.REACT_APP_DEFAULT_PROFILE_PICTURE_UR,
       followers: 0,
     });
   } catch (error) {
@@ -151,4 +157,3 @@ export const unfollowUser =
       payload: { followerUserId, followingUserId },
     });
   };
-
