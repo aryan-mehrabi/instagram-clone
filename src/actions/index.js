@@ -51,7 +51,7 @@ export const signUp = (email, password, username) => async () => {
     await setData(response.user.uid, "users", {
       userId: response.user.uid,
       username,
-      profilePicture: process.env.REACT_APP_DEFAULT_PROFILE_PICTURE_UR,
+      profilePicture: process.env.REACT_APP_DEFAULT_PROFILE_PICTURE_URL,
       followers: 0,
     });
   } catch (error) {
