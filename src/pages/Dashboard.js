@@ -5,6 +5,7 @@ import styles from "./dashboard.module.scss";
 import { fetchPosts } from "../actions";
 import PostCard from "../components/PostCard";
 import NavBar from "../components/NavBar";
+import { Link } from "react-router-dom";
 
 const Dashboard = ({ userId, logOut, user, fetchUser, fetchPosts, posts }) => {
   const onClickLogOut = event => {
@@ -20,12 +21,21 @@ const Dashboard = ({ userId, logOut, user, fetchUser, fetchPosts, posts }) => {
   }, [userId]);
 
   if (!userId || !user) {
-    return <div>please signin or signup first</div>;
+    return (
+      <div className={styles["fallback"]}>
+        <div className={styles["container"]}>
+          <h3>You are not signed in.</h3>
+          <Link className={styles["button"]} to="/">Sign In</Link>
+        </div>
+      </div>
+    );
   }
 
   const renderedPosts = Object.values(posts)
     .filter(
-      post => post.userId === userId || Object.keys(user.followings || {})?.includes(post.userId)
+      post =>
+        post.userId === userId ||
+        Object.keys(user.followings || {})?.includes(post.userId)
     )
     .sort((a, b) => b.createdTime - a.createdTime)
     .map(post => <PostCard key={post.postId} post={post} />);

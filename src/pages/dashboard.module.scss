@@ -35,3 +35,19 @@
     }
   }
 }
+
+.fallback {
+  @include flex(column, center, center);
+  height: 100vh;
+  .container {
+    @include flex(column);
+    @include border;
+    background-color: $white;
+    padding: 2em 2em;
+    .button {
+      @include buttonPrimary;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}
